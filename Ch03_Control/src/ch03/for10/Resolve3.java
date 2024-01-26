@@ -20,5 +20,16 @@ public class Resolve3 {
 		} else {
 			System.out.println("삼각형아님");
 		}
+		
+		
+		// 선생님풀이
+//		boolean bTriangle = false;
+//		if (a + b > c && a + c > b && b + c > a) {
+//			bTriangle = true;
+//			System.out.println("삼각형");
+//		} else {
+//			System.out.println("삼각형 아님");
+//		}
+		
 	}
 }

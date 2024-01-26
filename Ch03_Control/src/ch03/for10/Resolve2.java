@@ -25,5 +25,24 @@ public class Resolve2 {
 			System.out.print("짝");
 		}
 		
+		
+		
+		// 선생님풀이
+//		int n10 = num / 10;
+//		int n1 = num % 10;
+//		if (n10 == 3 || n10 == 6 || n10 == 9) {
+//			cnt++;
+//		}
+//		if (n1 == 3 || n1 == 6 || n1 == 9) {
+//			cnt++;
+//		}
+//		
+//		if (cnt == 1) {
+//			System.out.println("박수짝");
+//		} else if (cnt == 2) {
+//			System.out.println("박수짝짝");
+//		}
+		
+		
 	}
 }

@@ -51,5 +51,47 @@ public class Resolve1 {
 			System.out.print("십원" + cash_10 + "개 ");
 		}
 		
+		
+		
+		
+		// 선생님풀이
+//		int money = 0;
+//		
+//		System.out.println("입금");
+//		money = sc.nextInt();
+//		int m50000 = money/50000;
+//		money = money % 50000;
+//		int m10000 = money/10000;
+//		money = money % 10000;
+//		int m5000 = money/5000;
+//		money = money % 5000;
+//		int m1000 = money/1000;
+//		money = money % 1000;
+//		int m500 = money/500;
+//		money = money % 500;
+//		int m100 = money/100;
+//		money = money % 100;
+//		int m50 = money/50;
+//		money = money % 50;
+//		int m10 = money/10;
+//		money = money % 10;
+//		int m5 = money/5;
+//		money = money % 5;
+//		int m1 = money/1;
+//		money = money % 1;
+//		
+//		System.out.println("오만원 " + m50000 + "개 "
+//				+ "만원 " + m10000 + "개 "
+//				+ "오천원 " + m5000 + "개 "
+//				+ "천원 " + m1000 + "개 "
+//				+ "오백원 " + m500 + "개 "
+//				+ "백원 " + m100 + "개 "
+//				+ "오십원 " + m50 + "개 "
+//				+ "십원 " + m10 + "개 "
+//				+ "오원 " + m5 + "개 "
+//				+ "일원 " + m1 + "개 ");
+//		
+//		sc.close();
+		
 	}
 }
