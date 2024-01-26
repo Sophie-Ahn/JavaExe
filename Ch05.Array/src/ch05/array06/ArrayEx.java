@@ -11,5 +11,14 @@ public class ArrayEx {
 		System.out.println(Arrays.toString(scores));
 		System.out.println(Arrays.toString(score1));
 		System.out.println(Arrays.toString(score2));
+		
+		System.out.println(scores);
+		System.out.println(score1);
+		System.out.println(score2);
+		
+		// 깊은 복사
+		int[] scores4 = Arrays.copyOf(scores, scores.length);
+		System.out.println(scores);
+		System.out.println(scores4);
 	}
 }
