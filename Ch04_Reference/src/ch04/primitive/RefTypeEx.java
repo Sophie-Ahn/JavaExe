@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class RefTypeEx {
 	public static void main(String[] args) {
-		int[] arr = {10, 20, 30};
-		String name = "홍길동";
+		int[] arr = {10, 20, 30}; // 배열 클래스
+		String name = "홍길동"; // String 클래스
 		int[] arr1 = new int[3];
 		arr1[0] = 1;
 		arr1[1] = 2;
