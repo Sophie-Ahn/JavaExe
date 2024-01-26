@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class NeedToArray {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int[] kor = new int[3];
+		int[] kor = new int[5];
 		
 		// 3명의 국어점수 입력
 		System.out.print("1번째 학생 국어점수 입력: ");
