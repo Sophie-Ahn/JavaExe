@@ -2,7 +2,7 @@ package ch05.array02;
 
 import java.util.Scanner;
 
-public class NeedToArray {
+public class ArrayEx {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int[] kor = new int[5];
