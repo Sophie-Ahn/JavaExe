@@ -16,8 +16,6 @@ public class Resolve05 {
 		for (int i = 0; i < score.length; i++) {
 			System.out.print(score[i]+ ", ");
 		}
-		System.out.print("총합: " + total);
-		
-	
+		System.out.print("총합: " + total)
 	}
 }
