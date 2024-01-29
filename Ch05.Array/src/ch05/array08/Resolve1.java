@@ -4,20 +4,10 @@ import java.util.Arrays;
 
 public class Resolve1 {
 	public static void main(String[] args) {
-		int[] arr = {6, 5, 100, 40, 53, 98};
-		int min = arr[0];
-		int max = 0;
+		int[] arr = {6, 100, 40, 53, 98};
+		Arrays.sort(arr);
 		
-		for (int i = 0; i < arr.length; i++) {
-			if(arr[i] < min) {
-				min = arr[i];
-			}
-			if(arr[i] > max) {
-				max = arr[i];
-			}
-		}
-		
-		System.out.println(min);
-		System.out.println(max);
+		System.out.println(arr[4]);
+		System.out.println(arr[0]);
 	}
 }
