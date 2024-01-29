@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class Resolve3 {
 	public static void main(String[] args) {
-		int[] numArr = {1, 2, 3, 4, 5};
+		int[] numArr = {100, 2, 33, 41, 15};
 		int[] num = new int[5];
 		int cnt = 0;
-		
+
 		for (int i = numArr.length - 1; i >= 0; i--) {
 			num[cnt] = numArr[i];
 			cnt++;
@@ -16,6 +16,6 @@ public class Resolve3 {
 			numArr[i] = num[i];
 		}
 		System.out.println(Arrays.toString(num));
-		
+
 	}
 }
