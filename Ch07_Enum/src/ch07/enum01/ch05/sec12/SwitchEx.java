@@ -11,22 +11,21 @@ public class SwitchEx {
 		System.out.println("5. 유린기");
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.print("메뉴선택: ");
 		int sel = sc.nextInt();
 		switch(sel) {
-			case 1:
+			case Menu.ZZAJANGMYUN:
 				System.out.println("찌장면이 나왔습니다.");
 				break;
-			case 2:
+			case Menu.ZZAMPONG:
 				System.out.println("짬뽕이 나왔습니다.");
 				break;
-			case 3:
+			case Menu.TAMGSUYUK:
 				System.out.println("탕수육이 나왔습니다.");
 				break;
-			case 4:
+			case Menu.YOULINGI:
 				System.out.println("유산슬이 나왔습니다.");
 				break;
-			case 5:
+			case Menu.YOUSANSUL:
 				System.out.println("유린기가 나왔습니다.");
 				break;
 			default:
