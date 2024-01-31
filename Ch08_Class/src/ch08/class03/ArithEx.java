@@ -9,6 +9,7 @@ public class ArithEx {
 		int a = 19, b = 5;
 		int result = 0;
 		
+		// new를 이용해서 객체를 만들지 않아도 아래처럼 바로 사용가능함
 		result = Arith.add(a, b);
 		System.out.println(result);
 		result = Arith.sub(a, b);
