@@ -129,7 +129,16 @@ public static void answer4(Scanner sc) {
 
 // 5번 문제에 대한 풀이
 public static void answer5(Scanner sc) {
-
+	Rectangle r = new Rectangle();
+	r.set(4, 4, 2, 2);
+	r.square();
+	
+	Rectangle r1 = new Rectangle();
+	r1.set(4, 4, 2, 2);
+	r1.square();
+	
+	
+	System.out.println(r.equals(r1));
 }
 
 // 전체의 시작인 main 메서드
