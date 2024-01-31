@@ -17,7 +17,7 @@ public class Resolve3 {
 		}
 		System.out.println(Arrays.toString(numArr));
 		
-		
+
 		// 선생님풀이
 		/*
 		 * numArr.length/2까지 하면 앞과 뒤의 값 모두 접근

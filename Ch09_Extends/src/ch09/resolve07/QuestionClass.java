@@ -102,26 +102,59 @@ public static int getSelectMenu(Scanner sc) {
 
 // 1번 문제에 대한 풀이
 public static void answer1(Scanner sc) {
-	
+	Add add = new Add();
+	Sub sub = new Sub();
+	Multi multi = new Multi();
+	Div div = new Div();
+
+	// +
+	add.setValue(10, 2);
+	add.calculate();
+
+	// -
+	sub.setValue(10, 2);
+	sub.calculate();
+
+	// *
+	multi.setValue(10, 2);
+	multi.calculate();
+
+	// /
+	div.setValue(10, 2);
+	div.calculate();
 }
 
 // 2번 문제에 대한 풀이
 public static void answer2(Scanner sc) {
-
+	Triangle triangle = new Triangle(10,2);
+	triangle.calculate();
 }
 
-// 3번 문제에 대한 풀이
+// 3번 문제에 대한 풀이4
 public static void answer3(Scanner sc) {
+	int[] source = {1, 2, 3};
+	ArrayUtility.intToDouble(source);
+	double[] doubleSource = {1.2, 2.3, 3.4};
+	ArrayUtility.doubleToInt(doubleSource);
 }
 
 // 4번 문제에 대한 풀이
 public static void answer4(Scanner sc) {
+	int[] source = {1, 2, 3};
+	int[] source1 = {2, 4};
+	ArrayUtility2.concat(source, source1);
+	ArrayUtility2.remove(source, source1);
 }
 
 
 // 5번 문제에 대한 풀이
 public static void answer5(Scanner sc) {
-
+	ChildBead child1 = new ChildBead("child1",15);
+	ChildBead child2 = new ChildBead("child2",9);
+	child1.win(child2, 2);
+	child2.win(child1, 7);
+	child1.printBead();
+	child2.printBead();
 }
 
 // 전체의 시작인 main 메서드

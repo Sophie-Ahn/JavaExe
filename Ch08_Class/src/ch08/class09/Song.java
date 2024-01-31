@@ -3,12 +3,12 @@ package ch08.class09;
 
 public class Song {
 	// 필드
-	public String title;
-	public String artist;
-	public String album;
-	public String composer;
-	public int year;
-	public int track;
+	private String title;
+	private String artist;
+	private String album;
+	private String composer;
+	private int year;
+	private int track;
 	
 	// 메서드
 	public void setSongInfo(String title, String artist, String album, String composer, int year, int track) {
@@ -19,7 +19,7 @@ public class Song {
 		this.year = year;
 		this.track = track;
 	}
-	
+
 	public void show() {
 		System.out.println("노래제목: " + this.title);
 		System.out.println("가수: " + this.artist);
