@@ -24,7 +24,13 @@ public class CalcMain {
 		boolean isRun = true;
 		
 		while(isRun) {
+			// 자식 객체는 부모의 클래스 변수에 저장 할 수 있다.
+			// 객체 지향 언어의 특징
+			// 관리의 편의성(코드를 줄일 수 있다)
+			
+			// Calc는 부모지만 배열 안은 자식객체 
 			Calc[] calcs = new Calc[] {add, sub, mul, div};
+			
 			System.out.println("2개의 수 입력");
 			System.out.print("1번: ");
 			int num = sc.nextInt();
