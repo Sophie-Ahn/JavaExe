@@ -8,11 +8,10 @@ public class FruitSeller {
 	public FruitSeller(int numOfApple) {
 		this.numOfApple = numOfApple;
 	}
-	public int saleApple(FruitBuyer buyer, int money) {
+	public int saleApple(int money) {
 		int num = money/APPLE_PRICE;
 		numOfApple -= num;
 		saleMoney += money;
-		buyer.buyApple(this, money);
 		return num;
 	}
 	public void showSaleResult() {

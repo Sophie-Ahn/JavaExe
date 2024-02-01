@@ -103,14 +103,14 @@ public class QuestionClass {
 
     // 1번 문제에 대한 풀이
     public static void answer1(Scanner sc) {
-        ch08.class08.FruitSeller seller = new FruitSeller(20);
-        ch08.class08.FruitBuyer buyer = new FruitBuyer(10000);
+        ch08.class09.FruitSeller seller = new ch08.class09.FruitSeller(20);
+        ch08.class09.FruitBuyer buyer = new ch08.class09.FruitBuyer(10000);
 
         seller.showSaleResult();
         buyer.showBuyResult();
 
         seller.saleApple(buyer, 2000);
-
+        
         seller.showSaleResult();
         buyer.showBuyResult();
     }
@@ -125,8 +125,9 @@ public class QuestionClass {
 
     // 3번 문제에 대한 풀이
     public static void answer3(Scanner sc) {
-        Mart mart = new Mart();
-        mart.buy(5000, 2500);
+        Mart mart = new Mart(0);
+        PearBuyer buyer = new PearBuyer(0);
+        buyer.buyPear(mart, 10000);
     }
 
     // 4번 문제에 대한 풀이
@@ -147,7 +148,6 @@ public class QuestionClass {
         Rectangle rectangle1 = new Rectangle();
         rectangle1.set(4, 4, 2, 2);
         rectangle1.square();
-        rectangle1.show();
         rectangle1.show();
         System.out.println(rectangle.equals(rectangle1));
 

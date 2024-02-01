@@ -8,12 +8,11 @@ public class FruitBuyer {
 		this.money = money;
 		this.numOfApple = 0;
 	}
-
+	
 	public void buyApple(FruitSeller seller, int money) {
-		this.numOfApple += money / seller.APPLE_PRICE;
+		this.numOfApple += seller.saleApple(money);
 		this.money -= money;
 	}
-
 	public void showBuyResult() {
 		System.out.println("*** 과일 구매자의 현재 상황 ***");
 		System.out.println("현재 잔액: " + money);
