@@ -4,6 +4,6 @@ public class Sub extends Calc {
 
 	@Override
 	public int calculate() {
-		return 0;
+		return a-b;
 	}
 }

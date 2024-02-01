@@ -4,7 +4,7 @@ public class Mul extends Calc {
 	
 	@Override
 	public int calculate() {
-		return 0;
+		return a*b;
 	}
 
 }
