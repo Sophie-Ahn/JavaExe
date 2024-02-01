@@ -125,9 +125,9 @@ public class QuestionClass {
 
     // 3번 문제에 대한 풀이
     public static void answer3(Scanner sc) {
-        Mart mart = new Mart(0);
-        PearBuyer buyer = new PearBuyer(0);
-        buyer.buyPear(mart, 10000);
+        Mart mart = new Mart(2500);
+        PearBuyer buyer = new PearBuyer(10000);
+        buyer.buyPear(mart, 2500);
     }
 
     // 4번 문제에 대한 풀이
