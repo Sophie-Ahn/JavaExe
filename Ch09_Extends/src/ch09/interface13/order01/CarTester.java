@@ -11,7 +11,12 @@ public class CarTester {
 	 * CarTest는 ICar에 의존적이다.
 	 */
 	public CarTester(ICar car) {
+		// 인자를 주입하는 생성자를 만듬
 		this.car = car;
+	}
+	
+	public CarTester() {
+		// 인자를 주입하지 않은 생성자를 만듬
 	}
 	
 	public void setCar(ICar car) {
@@ -23,7 +28,7 @@ public class CarTester {
 			car.turnOff();
 		}
 		
-		return (int) Math.random() * 100; // 0 ~ 99
+		return (int) Math.random() * 50 + 50; // 50 ~ 99
 	}
 	public int speedTest() throws InterruptedException {
 		for (int i = 0; i <TEST_NUM; i++) {
