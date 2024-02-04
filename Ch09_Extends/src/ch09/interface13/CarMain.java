@@ -1,7 +1,5 @@
 package ch09.interface13;
 
-import java.util.Arrays;
-
 import ch09.interface13.factory01.FordCar;
 import ch09.interface13.factory01.HyundaiCar;
 import ch09.interface13.factory01.ToyotaCar;
