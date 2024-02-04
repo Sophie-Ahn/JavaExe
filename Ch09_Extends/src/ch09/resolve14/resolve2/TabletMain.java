@@ -7,5 +7,7 @@ public class TabletMain {
         TabletTester tester = new TabletTester();
 
         tester.test(new Samsung());
+        tester.test(new Sony());
+        tester.test(new Lg());
     }
 }
