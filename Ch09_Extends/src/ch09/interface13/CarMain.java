@@ -31,6 +31,7 @@ public class CarMain {
 	public static void main(String[] args) throws InterruptedException {
 		CarTester carTester = new CarTester();
 		ICar[] carArr = new ICar[] {
+				//ICar의 자식객체를 묶어버림
 				new HyundaiCar(),
 				new FordCar(),
 				new ToyotaCar()		
@@ -38,7 +39,10 @@ public class CarMain {
 		int[] score = new int[carArr.length];
 		
 		for (int i = 0; i < carArr.length; i++) {
-			carTester.setCar(carArr[i]);
+			// DI(Dependency Injection): 의존성 주입
+			// Ioc(Inversion of Control): 역제어
+			
+			carTester.setCar(carArr[i]); // 결국 제어하는건 carArr가 제어함
 			
 			score[i] += carTester.onOffTest();
 			System.out.printf("---OnOff 테스트 점수는 %d입니다\n", score[i]);

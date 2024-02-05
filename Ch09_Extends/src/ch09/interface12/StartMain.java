@@ -21,7 +21,9 @@ public class StartMain {
 		StarUnit[] units = new StarUnit[] {
 				new Marine(),
 				new Scv(),
-				new Hydra()
+				new Hydra(),
+				new Zealot()
+				// 자식들의 클래스를 배열로 객체를 받을 수 있다
 		};
 		
 		walk(units);
