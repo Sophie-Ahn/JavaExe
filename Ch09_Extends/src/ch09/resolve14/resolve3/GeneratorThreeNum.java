@@ -3,7 +3,7 @@ package ch09.resolve14.resolve3;
 import java.util.Arrays;
 
 public class GeneratorThreeNum {
-    public static int[] generatorNum() {
+    public int[] generatorNum() {
         int[] threeNum = new int[3];
 
         // 1번정하기
