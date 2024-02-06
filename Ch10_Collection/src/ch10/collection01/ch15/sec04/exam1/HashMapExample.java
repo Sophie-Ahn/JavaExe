@@ -6,6 +6,20 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+/*
+ * Map은 Dictionary, HashTable 구조라고도 한다.
+ * 검색에 최적화되어 있는 구조이다.
+ * Set은 값자체를 hash값으로 바꿔서 정렬 후 값을 보관한다.
+ * 그러나 Map은 key값을 hash값으로 바꿔서 정렬 후 값을 보관한다.
+ * 그리고 key hash는 테이블로 만들어 실제 value가 위치한 위치값을 저장한다.
+ * 그래서 key를 넣으면 value를 빠르게 검색할 수 있다.
+ * 아무리 많은 데이터라도 빠르게 검색할 수 있는 자료구조이다.
+ * 데이터베이스의 index가 이 자료구조로 되어 있다.
+ * 
+ * '입력 시는 hash값, 정렬이 일어나므로 리스트구조보다 느리다'
+ * '다만 특정 값 검색은 가장 빠르다'
+ */
+
 public class HashMapExample {
 	public static void main(String[] args) {
 		// Map컬렉션 셍성
@@ -13,15 +27,14 @@ public class HashMapExample {
 		
 		// 객체저장
 		map.put("신용권", 85);
-		map.put("신용", 90);
-		map.put("신용권", 80); // 키가 같기 때문에 제일 마지막에 저장한 값만 저장
-		map.put("용권", 58);
-		map.put("신", 95);
+		map.put("홍길동", 90);
+		map.put("동장군", 80);
+		map.put("홍길동", 95); // 키가 같기 때문에 제일 마지막에 저장한 값만 저장
 		System.out.println("총 Entry 수: " + map.size());
 		System.out.println();
 		
 		// 키로 값얻기
-		String key = "신용";
+		String key = "홍길동";
 		int value = map.get(key);
 		System.out.println(key + ": " + value);
 		System.out.println();
