@@ -1,7 +1,12 @@
 package ch10.collection01.ch15.sec02.exam03;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+
+/*
+ * 순서대로 출력할때는 LinkedList보다 ArrayList가 더 빠르다
+ */
 
 public class LinkedListExample {
 	public static void main(String[] args) {
@@ -9,7 +14,7 @@ public class LinkedListExample {
 		List<String> list1 = new ArrayList<String>();
 		
 		// LinkedList 컬렉션 객체 생성
-		List<String> list2 = new ArrayList<String>();
+		List<String> list2 = new LinkedList<String>();
 		
 		// 시작 시간과 끝 시간을 저장할 변수 선언
 		long startTime;
