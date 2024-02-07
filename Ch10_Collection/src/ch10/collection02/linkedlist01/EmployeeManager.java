@@ -8,7 +8,6 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 	private final int EMP_NUM = 5; // 100명 사원이 최대
 	
 	// Employee의 자식객체들을 저장
-//	private Employee[] empArr = new Employee[EMP_NUM];
 	List<Employee> empArr = new LinkedList<>();
 	private int numOfEmp = 0; // 저장된 사원객체 수
 	private Scanner sc = new Scanner(System.in);

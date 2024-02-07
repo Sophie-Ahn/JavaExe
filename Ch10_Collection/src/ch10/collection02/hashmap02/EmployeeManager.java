@@ -1,13 +1,18 @@
 package ch10.collection02.hashmap02;
 
+import java.security.KeyStore.Entry;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class EmployeeManager { // 자식들을 관리하는 매니저
 	private final int EMP_NUM = 5; // 100명 사원이 최대
 	
 	// Employee의 자식객체들을 저장
-	private Employee[] empArr = new Employee[EMP_NUM];
 	private int numOfEmp = 0; // 저장된 사원객체 수
+	Map<Employee, Integer> empArr = new HashMap<>();
 	private Scanner sc = new Scanner(System.in);
 	
 	
@@ -40,6 +45,8 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		int bonus = sc.nextInt();
 		
 		RegularEmployee emp = new RegularEmployee(empno, name, yearSalary, bonus);
+		int v = empArr.get(emp);
+		empArr.put(emp, v);
 		
 		return emp;
 	}
@@ -57,6 +64,8 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		int hireYear = sc.nextInt();
 		
 		TempEmployee emp = new TempEmployee(empno, name, yearSalary, hireYear);
+		Integer v = empArr.get(emp);
+		empArr.put(emp, v);
 		
 		return emp;
 	}
@@ -74,6 +83,8 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		int workDay = sc.nextInt();
 		
 		PartTimeEmployee emp = new PartTimeEmployee(empno, name, dailyPay, workDay);
+		Integer v = empArr.get(emp);
+		empArr.put(emp, v);
 		
 		return emp;
 	}
@@ -81,7 +92,7 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		boolean isSave = true;
 		
 		if (this.numOfEmp < EMP_NUM){
-			this.empArr[this.numOfEmp] = emp;
+			empArr.put(emp, numOfEmp);
 			this.numOfEmp++;
 			isSave = true;
 		} else {
@@ -90,32 +101,36 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		
 		return isSave;
 	}
+	Set<java.util.Map.Entry<Employee, Integer>> entryset = empArr.entrySet();
+	Iterator<java.util.Map.Entry<Employee, Integer>> entryIterator = entryset.iterator();
+	java.util.Map.Entry<Employee, Integer> entry = entryIterator.next();		
+	
 	private void viewAllEmployeeInfo() {
 		for(int i = 0; i <this.numOfEmp; i++) {
-			this.empArr[i].showEmployeeInfo();
+			entry.getKey();
 		}
 	}
 	private void viewRegularEmployeeInfo() {
 		for(int i = 0; i <this.numOfEmp; i++) {
-			Employee emp = this.empArr[i];
-			if (emp instanceof RegularEmployee) {				
-				this.empArr[i].showEmployeeInfo();
+			Employee emp = entry.getKey();
+			if (emp instanceof RegularEmployee) {
+				empArr.get(emp);
 			}
 		}
 	}
 	private void viewTempEmployeeInfo() {
 		for(int i = 0; i <this.numOfEmp; i++) {
-			Employee emp = this.empArr[i];
+			Employee emp = entry.getKey();
 			if (emp instanceof TempEmployee) {				
-				this.empArr[i].showEmployeeInfo();
+				empArr.get(emp);
 			}
 		}
 	}
 	private void viewPartTimeEmployeeInfo() {
 		for(int i = 0; i <this.numOfEmp; i++) {
-			Employee emp = this.empArr[i];
+			Employee emp = entry.getKey();
 			if (emp instanceof PartTimeEmployee) {				
-				this.empArr[i].showEmployeeInfo();
+				empArr.get(emp);
 			}
 		}
 	}
