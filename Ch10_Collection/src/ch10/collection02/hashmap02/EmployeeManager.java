@@ -1,9 +1,9 @@
 package ch10.collection02.hashmap02;
 
-import java.security.KeyStore.Entry;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -12,9 +12,9 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 	
 	// Employee의 자식객체들을 저장
 	private int numOfEmp = 0; // 저장된 사원객체 수
-	Map<Employee, Integer> empArr = new HashMap<>();
-	private Scanner sc = new Scanner(System.in);
 	
+	Map<String, Employee> empArr = new HashMap<>();
+	private Scanner sc = new Scanner(System.in);
 	
 	private int viewMenu() {
 		System.out.println("[ 사원 선택 ]");
@@ -45,8 +45,7 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		int bonus = sc.nextInt();
 		
 		RegularEmployee emp = new RegularEmployee(empno, name, yearSalary, bonus);
-		int v = empArr.get(emp);
-		empArr.put(emp, v);
+		empArr.put(empno, emp);
 		
 		return emp;
 	}
@@ -64,8 +63,7 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		int hireYear = sc.nextInt();
 		
 		TempEmployee emp = new TempEmployee(empno, name, yearSalary, hireYear);
-		Integer v = empArr.get(emp);
-		empArr.put(emp, v);
+		empArr.put(empno, emp);
 		
 		return emp;
 	}
@@ -83,8 +81,7 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		int workDay = sc.nextInt();
 		
 		PartTimeEmployee emp = new PartTimeEmployee(empno, name, dailyPay, workDay);
-		Integer v = empArr.get(emp);
-		empArr.put(emp, v);
+		empArr.put(empno, emp);
 		
 		return emp;
 	}
@@ -92,7 +89,7 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		boolean isSave = true;
 		
 		if (this.numOfEmp < EMP_NUM){
-			empArr.put(emp, numOfEmp);
+			empArr.put(emp.empno, emp);
 			this.numOfEmp++;
 			isSave = true;
 		} else {
@@ -101,18 +98,15 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 		
 		return isSave;
 	}
-	Set<java.util.Map.Entry<Employee, Integer>> entryset = empArr.entrySet();
-	Iterator<java.util.Map.Entry<Employee, Integer>> entryIterator = entryset.iterator();
-	java.util.Map.Entry<Employee, Integer> entry = entryIterator.next();		
 	
-	private void viewAllEmployeeInfo() {
+	private void viewAllEmployeeInfo(Employee emp) {
 		for(int i = 0; i <this.numOfEmp; i++) {
-			entry.getKey();
+			empArr.get(emp.empno);
 		}
 	}
 	private void viewRegularEmployeeInfo() {
 		for(int i = 0; i <this.numOfEmp; i++) {
-			Employee emp = entry.getKey();
+			Employee emp = empArr.get(i);
 			if (emp instanceof RegularEmployee) {
 				empArr.get(emp);
 			}
@@ -120,7 +114,7 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 	}
 	private void viewTempEmployeeInfo() {
 		for(int i = 0; i <this.numOfEmp; i++) {
-			Employee emp = entry.getKey();
+			Employee emp = empArr.get(i);
 			if (emp instanceof TempEmployee) {				
 				empArr.get(emp);
 			}
@@ -128,7 +122,7 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 	}
 	private void viewPartTimeEmployeeInfo() {
 		for(int i = 0; i <this.numOfEmp; i++) {
-			Employee emp = entry.getKey();
+			Employee emp = empArr.get(i);
 			if (emp instanceof PartTimeEmployee) {				
 				empArr.get(emp);
 			}
@@ -152,7 +146,7 @@ public class EmployeeManager { // 자식들을 관리하는 매니저
 				break;
 			case EmpMenu.ALL_INFO:
 				emp = null; 
-				viewAllEmployeeInfo();
+				viewAllEmployeeInfo(emp);
 				break;
 			case EmpMenu.REG_INFO:
 				emp = null;
