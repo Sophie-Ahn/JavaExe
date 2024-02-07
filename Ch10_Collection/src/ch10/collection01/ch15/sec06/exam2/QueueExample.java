@@ -3,6 +3,10 @@ package ch10.collection01.ch15.sec06.exam2;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Queue는 시뮬레이터나 통신에 많이 쓰임
+ * */
+
 public class QueueExample {
     public static void main(String[] args) {
         // Queue 컬렉션 생성
