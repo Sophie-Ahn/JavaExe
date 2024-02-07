@@ -20,7 +20,7 @@ public class ImmutableExample {
 
 		//Map 불변 컬렉션 생성
 		Map<Integer, String> immutableMap1 = Map.of(
-				1, "A",
+				1, "A", // key와 value로 만들어짐
 				2, "B",
 				3, "C"
 				);
@@ -31,7 +31,7 @@ public class ImmutableExample {
 		list.add("A");
 		list.add("B");
 		list.add("C");
-		List<String> immutableList2 = List.copyOf(list);
+		List<String> immutableList2 = List.copyOf(list); // 불변컬렉션으로 복사  
 		
 		//Set 컬렉션을 불변 컬렉션으로 복사
 		Set<String> set= new HashSet< >();
@@ -49,6 +49,6 @@ public class ImmutableExample {
 		
 		//배열로부터 List 불변 컬렉션 생성
 		String[] arr = { "A", "B", "C" };
-		List<String> immutableList3 = Arrays.asList(arr);
+		List<String> immutableList3 = Arrays.asList(arr); // array에선 asList를 이용해 만들어낼 수 있다
 	}
 }
