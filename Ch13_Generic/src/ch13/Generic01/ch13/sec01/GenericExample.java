@@ -10,8 +10,8 @@ public class GenericExample {
 		
 		// Box<Integer> box2 = new Box<Integer>();
 		Box<Integer> box2 = new Box<>();
-		box2.content = 100;
-		int value = box2.content;
+		box2.content = 100; // Boxing: Heep -> Stack
+		int value = box2.content; // UnBoxing: Stack -> Heep
 		System.out.println(value);
 	}
 }
