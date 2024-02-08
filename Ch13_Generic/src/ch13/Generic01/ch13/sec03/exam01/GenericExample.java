@@ -1,14 +1,15 @@
 package ch13.Generic01.ch13.sec03.exam01;
 
 public class GenericExample {
-	//제네릭메소드
+	// 제네릭메소드
+	//      타입파라미터 리턴값자료형      매개변수
 	public static <T> Box<T> boxing(T t){
 		Box<T> box = new Box<T>();
 		box.set(t);
 		return box;
 	}
 	public static void main(String[] args) {
-		// 제네릭 매소드 호출
+		// 제네릭매소드 호출
 		Box<Integer> box1 = boxing(100);
 		int intValue = box1.get();
 		System.out.println(intValue);
