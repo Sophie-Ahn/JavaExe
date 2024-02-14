@@ -5,6 +5,7 @@ public class JoinExample {
 		SumThread sumThread = new SumThread();
 		sumThread.start();
 		try {
+			// join을 안 걸어주면 main이 먼저 종료가 되서 리턴당함
 			sumThread.join();
 		} catch(InterruptedException e) {
 			

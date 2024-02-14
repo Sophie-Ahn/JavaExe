@@ -11,6 +11,7 @@ public class SumThread extends Thread {
 		this.sum = sum;
 	}
 	
+	// 스레드를 실행시키는 함수
 	@Override
 	public void run() {
 		for(int i = 1; i <= 100; i++) {

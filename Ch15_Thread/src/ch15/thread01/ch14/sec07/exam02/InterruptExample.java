@@ -11,6 +11,7 @@ public class InterruptExample {
 			
 		}
 		
+		// 강제로 thread의 run()에 InterruptedException를 throw한다
 		thread.interrupt();
 	}
 }

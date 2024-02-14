@@ -6,7 +6,7 @@ public class SafeStopExample {
 		printThread.start();
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(100);
 		} catch(InterruptedException e) {
 			
 		}

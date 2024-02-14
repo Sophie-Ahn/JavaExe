@@ -14,11 +14,13 @@ public class RunnableExecuteExample {
 		}
 		
 		// ExecutorService 생성
+		// 스레드풀은 5개의 스레드 보유
 		ExecutorService executorService = Executors.newFixedThreadPool(5);
 		
 		// 이메일을 보내는 작업 생성 및 처리 요청
 		for(int i = 0; i<1000; i++) {
 			final int idx = i;
+			// 스레드풀의 스레드에 함수 지정해줌
 			executorService.execute(new Runnable() {
 				@Override
 				public void run() {
