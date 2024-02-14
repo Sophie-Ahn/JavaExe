@@ -7,7 +7,7 @@ public class ButtonExample {
 		Button btnOk = new Button();
 		
 		// Ok 버튼 객체에 ClickListener 구현 객체 주입
-		btnOk.setClickListener(new Button.ClickListener() {
+		btnOk.setClickListener(new Button.ClickListener() { // static interface이기 때문에 바로 ClickListener을 불러올 수 있음
 			
 			@Override
 			public void onClick() {

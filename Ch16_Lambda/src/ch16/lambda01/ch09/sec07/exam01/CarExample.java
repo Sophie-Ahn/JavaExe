@@ -12,11 +12,13 @@ public class CarExample {
 		car.run2();
 		
 		// 익명자식 객체가 대입된 매개변수 사용
-		car.run3(new Tire() {
+		car.run3(new Tire() { // Tire클래스를 상속받은 자식 객체가 온 것
 			@Override
 			public void roll() {
 				System.out.println("익명자식 Tire 객체3이굴러갑니다");
 			}
 		});
+		
+		car.tireInfo();
 	}
 }

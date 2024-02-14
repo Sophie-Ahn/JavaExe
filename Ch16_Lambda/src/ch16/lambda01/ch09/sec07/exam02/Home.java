@@ -20,7 +20,8 @@ public class Home {
 		rc.turnOff();
 	}
 	
-	//메소드 (로컬 변수 이용)
+	// 메소드 (로컬 변수 이용)
+	// 메소드안에서 바로 구현
 	public void use2() {
 		// 로컬 변수에 익명 구현 객체 대입
 		RemoteControl rc = new RemoteControl() {
