@@ -4,7 +4,7 @@ public class LambdaExample {
 	public static void main(String[] args) {
 		Person person = new Person();
 		
-		person.action((x, y) -> {
+		person.action((x, y) -> { // calc함수를 람다식으로 구현
 			double result = x + y;
 			return result;
 		});

@@ -7,7 +7,7 @@ public class LambdaExample {
 		// 매개변수가 두개 일 경우
 		person.action1((name, job)->{
 			System.out.println(name+ "이 ");
-			System.out.println(job+ "을 합니다");			
+			System.out.println(job+ "을 합니다");		
 		});
 		person.action1((name, job)-> System.out.println(name+ "이 " +job + "을 합니다"));
 		
