@@ -40,7 +40,7 @@ public class ByteBuffBufferedFileCopy {
 		byte[] buf = new byte[1024];
 		long stime = System.currentTimeMillis();
 		while(true) {
-			readLen = bin.read();
+			readLen = bin.read(buf);
 			if(readLen == -1) {
 				break;
 			}
