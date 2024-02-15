@@ -1,4 +1,4 @@
-package ch18.fileio01.bytestream01;
+package ch18.fileio.bytestream01;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
