@@ -49,6 +49,7 @@ public class JsonChatClient {
 				int sel = getSelectMenu(scan);
 				switch(sel) {
 					case ServiceMenu.ALL_CHAT:
+						sendAllChat(scan, pw, id);
 						break;
 					case ServiceMenu.ONE_CHAT:
 						break;
