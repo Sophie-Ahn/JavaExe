@@ -1,6 +1,5 @@
 package ch11.string02.ch12.sec05;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 public class BytesToStringExample {
