@@ -64,20 +64,45 @@ public class JsonChatServer {
  * 			[응답]
  * 			cmd: ID
  * 			ack: ok(성공), fail(실패)
- * 		3-2) 사칙연산 cmd: ARITH id: {id값} op: {연산자}
- * val1: {첫번째값} val2: {두번째값}
+ * 		3-2) 사칙연산
+ * 			cmd: ARITH
+ * 			id: {id값}
+ * 			op: {연산자}
+ * 			val1: {첫번째값}
+ * 			val2: {두번째값}
  * 
- * [응답] cmd: ARITH ack: {결과값} 3-3) 전체채팅 [요청] cmd: ALLCHAT id: {id값}
- * msg: {문자메시지}
+ * 			[응답]
+ * 			cmd: ARITH
+ * 			ack: {결과값}
+ * 		3-3) 전체채팅
+ * 			[요청]
+ * 			cmd: ALLCHAT
+ * 			id: {id값}
+ * 			msg: {문자메시지}
  * 
- * [응답] cmd: ID ack: ok(성공), fail(실패)
+ * 			[응답]
+ * 			cmd: ID
+ * 			ack: ok(성공), fail(실패)
  * 
- * [전송] cmd: BROADCHAT id: {id값} msg: {문자메시지} 3-4) 1:1채팅 [요청] cmd: ONECHAT id:
- * {id값} youid: {상대id} msg: {문자메시지}
+ * 			[전송]
+ * 			cmd: BROADCHAT
+ * 			id: {id값}
+ * 			msg: {문자메시지}
+ * 		3-4) 1:1채팅
+ * 			[요청]
+ * 			cmd: ONECHAT
+ * 			id: {id값}
+ * 			youid: {상대id}
+ * 			msg: {문자메시지}
  * 
- * [응답] cmd: ID ack: ok(성공), fail(실패)
+ * 			[응답]
+ * 			cmd: ID
+ * 			ack: ok(성공), fail(실패)
  * 
- * [전송] cmd: UNIQCHAT id: {id값} msg: {문자메시지}
+ * 			[전송]
+ * 			cmd: UNIQCHAT
+ * 			id: {id값}
+ * 			msg: {문자메시지}
  */
 
 class WorkerThread extends Thread {
@@ -107,6 +132,7 @@ class WorkerThread extends Thread {
 				}
 				/*
 				 * json패킷을 해석해서 알맞은 처리를 한다. 문자열 -> JSONObject 변환 -> cmd를 해석해서 어떤 명령인지?
+				 * 명령당 알맞은 처리
 				 */
 				JSONObject packetObj = new JSONObject(line);
 				processPacket(packetObj);
@@ -119,8 +145,10 @@ class WorkerThread extends Thread {
 
 	private void processPacket(JSONObject packetObj) throws IOException {
 		JSONObject ackObj = new JSONObject();
+		// 어떤 종류의 패킷을 보냈는지 분류하기 위한 정보
 		String cmd = packetObj.getString("cmd");
 
+		// id등록 요청
 		if (cmd.equals("ID")) {
 			// 클라이언트 요청 처리
 			String id = packetObj.getString("id");
@@ -139,7 +167,9 @@ class WorkerThread extends Thread {
 			pw.println(ack);
 			pw.flush();
 
-		} else if (cmd.equals("ARITH")) {
+		}
+		// 사칙연산 업무 결과 요청
+		else if (cmd.equals("ARITH")) {
 			// 요청 처리
 			String id = packetObj.getString("id");
 			String op = packetObj.getString("op");
@@ -162,7 +192,9 @@ class WorkerThread extends Thread {
 			pw.println(ack);
 			pw.flush();
 			
-		} else if (cmd.equals("ALLCHAT")) {
+		}
+		// 접속사 접체한테 채팅 메시지 전송
+		else if (cmd.equals("ALLCHAT")) {
 			String id = packetObj.getString("id");
 			String msg = packetObj.getString("msg");
 			
@@ -189,7 +221,9 @@ class WorkerThread extends Thread {
 			// 전체 전송
 			broadcast(strBroad);
 			
-		} else if (cmd.equals("ONECHAT")) {
+		}
+		// 특정 id 대상한테 1:1 채팅
+		else if (cmd.equals("ONECHAT")) {
 			String id = packetObj.getString("id");
 			String yourid = packetObj.getString("yourid");
 			String msg = packetObj.getString("msg");
@@ -239,7 +273,7 @@ class WorkerThread extends Thread {
 			String id = idIter.next();
 			Socket sock = (Socket) ht.get(id);
 			
-			// 클라이언트한테는 보낼 필요가 없으므로
+			// 메시지를 보내 온 클라이언트한테는 보낼 필요가 없으므로
 			if(sock == this.socket) {
 				continue;
 			}
